@@ -15,9 +15,15 @@ public class Calculator {
     }
 
     public static double divide(double a, double b) throws ArithmeticException {
+        double result = 0;
+        try {
+            result = a / b;
+        }catch (ArithmeticException e){
+            e.printStackTrace();
+        }
         if (b == 0) {
             throw new ArithmeticException("You cannot divide by zero");
         }
-        return a / b;
+        return result;
     }
 }

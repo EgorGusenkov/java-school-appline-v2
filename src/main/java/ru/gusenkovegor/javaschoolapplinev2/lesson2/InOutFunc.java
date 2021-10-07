@@ -24,8 +24,8 @@ public class InOutFunc {
         try {
             String value = scanner.nextLine();
             result = Integer.parseInt(value);
-        } catch (Exception e) {
-            System.err.println(WAIT_DOUBLE);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
         return result;
     }
