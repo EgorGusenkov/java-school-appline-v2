@@ -1,4 +1,4 @@
-package ru.gusenkovegor.javaschoolapplinev2.lesson4;
+package ru.gusenkovegor.javaschoolapplinev2.lesson4.sweets;
 
 import ru.gusenkovegor.javaschoolapplinev2.lesson2.InOutFunc;
 
@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class SweetShop {
 
-    public static int getSweet(Scanner scanner) {
+    private static int getSweet(Scanner scanner) {
         return InOutFunc.readAction(scanner,
                 "1 - WHITE_CHOCOLATE \n" +
                         "2 - MILK_CHOCOLATE \n" +
@@ -18,23 +18,30 @@ public class SweetShop {
                 4);
     }
 
-    public static void start() {
+    public static void start(Scanner scanner) {
         boolean isContinue = true;
         Set<Sweets> basket = new HashSet<>();
-        Scanner scanner = new Scanner(System.in);
         do {
             switch (getSweet(scanner)) {
                 case 1:
-                    basket.add(Sweets.WHITE_CHOCOLATE);
+                    WhiteChocolate whiteChocolate = new WhiteChocolate(50, 50);
+                    whiteChocolate.setCalorie(145);
+                    basket.add(whiteChocolate);
                     break;
                 case 2:
-                    basket.add(Sweets.MILK_CHOCOLATE);
+                    MilkChocolate milkChocolate = new MilkChocolate(55, 55);
+                    milkChocolate.setPercentageOfCocoa(30);
+                    basket.add(milkChocolate);
                     break;
                 case 3:
-                    basket.add(Sweets.CANDY);
+                    Candy candy = new Candy(60, 60);
+                    candy.setCountryOfOrigin("Россия");
+                    basket.add(candy);
                     break;
                 case 4:
-                    basket.add(Sweets.JELLYBEAN);
+                    Jellybean jellybean = new Jellybean(65, 65);
+                    jellybean.setComposition("сахар, глюкозный сироп, кукурузный крахмал");
+                    basket.add(jellybean);
                     break;
                 case 0:
                     isContinue = false;
@@ -65,7 +72,7 @@ public class SweetShop {
     private static String getInfo(Set<Sweets> basket) {
         StringBuilder info = new StringBuilder();
         for (Sweets sweet : basket) {
-            info.append(sweet.toString());
+            info.append(sweet).append("\n");
         }
         return info.toString();
     }

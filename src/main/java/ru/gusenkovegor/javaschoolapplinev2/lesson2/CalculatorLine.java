@@ -15,9 +15,8 @@ public class CalculatorLine {
                 4);
     }
 
-    public static void startCalculator() {
+    public static void start(Scanner scanner) {
         boolean isContinue = true;
-        Scanner scanner = new Scanner(System.in);
         do {
             switch (getCalculatorAction(scanner)) {
                 case 1:

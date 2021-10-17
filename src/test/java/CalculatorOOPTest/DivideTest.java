@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ru.gusenkovegor.javaschoolapplinev2.lesson5.CalculatorOOP;
+import ru.gusenkovegor.javaschoolapplinev2.lesson5.CalculatorOOP.CalculatorOOP;
+import ru.gusenkovegor.javaschoolapplinev2.lesson5.CalculatorOOPOld.CalculatorOOPOld;
 
 import java.util.Arrays;
 
@@ -27,7 +28,7 @@ public class DivideTest {
         this.expectedException = expectedException;
     }
 
-    @Parameterized.Parameters(name = "{index}:sumOf({0}+{1})={2}")
+    @Parameterized.Parameters(name = "{index}:DivideOf({0}+{1})={2}")
     public static Iterable<Object[]> dataForTest() {
         return Arrays.asList(new Object[][]{
                 {2, 2, 1, null},
@@ -42,7 +43,7 @@ public class DivideTest {
     public void divideTest() throws ArithmeticException {
         if (expectedException != null) {
             thrown.expect(expectedException);
-            Assertions.assertEquals(expected, CalculatorOOP.calc(valueA, valueB, '/'));
+            Assertions.assertEquals(expected, new CalculatorOOP(valueA, valueB, '/').calc());
         }
     }
 }

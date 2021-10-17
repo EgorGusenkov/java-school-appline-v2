@@ -1,18 +1,18 @@
-package ru.gusenkovegor.javaschoolapplinev2.lesson4;
-
-import ru.gusenkovegor.javaschoolapplinev2.lesson2.InOutFunc;
+package ru.gusenkovegor.javaschoolapplinev2.lesson4.arrays;
 
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.Random;
 
 public class MinMaxArrayLine {
+    private static final int LENGTH_ARRAY = 20;
+    private static final int MIN_RANDOM = -10;
+    private static final int MAX_RANDOM = 10;
 
-    public static void startMinMaxArray() {
-        Scanner scanner = new Scanner(System.in);
-        int[] array = new int[InOutFunc.readInt(scanner, "Введите длинну массива >= 2:")];
-        System.out.println("Введите значения массива:");
+    public static void start() {
+        Random random = new Random();
+        int[] array = new int[LENGTH_ARRAY];
         for (int i = 0; i < array.length; i++) {
-            array[i] = scanner.nextInt();
+            array[i] = random.nextInt(MAX_RANDOM - MIN_RANDOM + 1) + MIN_RANDOM;
         }
 
         System.out.println("Исходный массив: " + Arrays.toString(array));

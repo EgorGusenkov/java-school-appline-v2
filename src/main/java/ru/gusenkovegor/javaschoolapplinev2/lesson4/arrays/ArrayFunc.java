@@ -1,4 +1,4 @@
-package ru.gusenkovegor.javaschoolapplinev2.lesson4;
+package ru.gusenkovegor.javaschoolapplinev2.lesson4.arrays;
 
 public class ArrayFunc {
 
@@ -11,7 +11,7 @@ public class ArrayFunc {
                 minIndex = i;
             }
         }
-        return minIndex - 1;
+        return minIndex;
     }
 
     public static int findMaxIndex(int[] array) {
@@ -23,6 +23,6 @@ public class ArrayFunc {
                 maxIndex = i;
             }
         }
-        return maxIndex - 1;
+        return maxIndex;
     }
 }

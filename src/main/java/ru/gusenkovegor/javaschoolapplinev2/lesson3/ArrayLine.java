@@ -11,5 +11,6 @@ public class ArrayLine {
         Scanner scanner = new Scanner(System.in);
         String array = InOutFunc.readString(scanner, ENTER_ARRAY_WORDS);
         System.out.println("Самое длинное слово: " + ArrayFunc.FindMaxLength(array.split(" ")));
+        scanner.close();
     }
 }

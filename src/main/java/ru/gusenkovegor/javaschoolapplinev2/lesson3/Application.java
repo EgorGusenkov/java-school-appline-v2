@@ -12,7 +12,7 @@ public class Application {
         do {
             switch (getCalculatorAction(scanner)) {
                 case 1:
-                    CalculatorLine.startCalculator();
+                    CalculatorLine.start(scanner);
                     break;
                 case 2:
                     ArrayLine.startArrayFunc();
@@ -22,6 +22,7 @@ public class Application {
                     break;
             }
         } while (isContinue);
+        scanner.close();
     }
 
     public static int getCalculatorAction(Scanner scanner) {

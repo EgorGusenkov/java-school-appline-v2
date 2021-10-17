@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ru.gusenkovegor.javaschoolapplinev2.lesson5.CalculatorOOP;
+import ru.gusenkovegor.javaschoolapplinev2.lesson5.CalculatorOOPOld.CalculatorOOPOld;
 
 import java.util.Arrays;
 
@@ -21,7 +21,7 @@ public class SubtractTest {
         this.expected = expected;
     }
 
-    @Parameterized.Parameters(name = "{index}:sumOf({0}+{1})={2}")
+    @Parameterized.Parameters(name = "{index}:SubtractOf({0}+{1})={2}")
     public static Iterable<Object[]> dataForTest() {
         return Arrays.asList(new Object[][]{
                 {4, 2, 2},
@@ -34,6 +34,6 @@ public class SubtractTest {
 
     @Test
     public void subtractTest(){
-        Assertions.assertEquals(expected, CalculatorOOP.calc(valueA, valueB, '-'));
+        Assertions.assertEquals(expected, CalculatorOOPOld.calc(valueA, valueB, '-'));
     }
 }

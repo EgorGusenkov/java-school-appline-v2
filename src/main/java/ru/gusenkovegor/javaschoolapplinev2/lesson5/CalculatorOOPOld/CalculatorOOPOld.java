@@ -1,11 +1,11 @@
-package ru.gusenkovegor.javaschoolapplinev2.lesson5;
+package ru.gusenkovegor.javaschoolapplinev2.lesson5.CalculatorOOPOld;
 
 import ru.gusenkovegor.javaschoolapplinev2.lesson2.Calculator;
 import ru.gusenkovegor.javaschoolapplinev2.lesson2.InOutFunc;
 
 import java.util.Scanner;
 
-public class CalculatorOOP extends Calculator {
+public class CalculatorOOPOld extends Calculator {
     private static final String ENTER_DOUBLE = "Введите число:";
     private static final String ENTER_OPERATION = "Введите операцию:";
     private static final String RESULT_OPERATION = "Результат операции: ";
@@ -13,11 +13,12 @@ public class CalculatorOOP extends Calculator {
     static Scanner scanner = new Scanner(System.in);
 
     public static void start() {
-        int num1 = InOutFunc.readInt(scanner, ENTER_DOUBLE);
-        int num2 = InOutFunc.readInt(scanner, ENTER_DOUBLE);
+        double num1 = InOutFunc.readInt(scanner, ENTER_DOUBLE);
+        double num2 = InOutFunc.readInt(scanner, ENTER_DOUBLE);
         char operation = readOperation();
         double result = calc(num1, num2, operation);
         System.out.println(RESULT_OPERATION + result);
+        scanner.close();
     }
 
     public static char readOperation() {

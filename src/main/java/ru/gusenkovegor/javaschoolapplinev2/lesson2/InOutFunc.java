@@ -14,6 +14,7 @@ public class InOutFunc {
             result = Double.parseDouble(value);
         } catch (Exception e) {
             System.err.println(WAIT_DOUBLE);
+            result = readDouble(scanner,text);
         }
         return result;
     }
@@ -25,7 +26,8 @@ public class InOutFunc {
             String value = scanner.nextLine();
             result = Integer.parseInt(value);
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            System.err.println(WAIT_INT);
+            result = readInt(scanner,text);
         }
         return result;
     }

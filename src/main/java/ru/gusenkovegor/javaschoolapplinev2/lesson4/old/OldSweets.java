@@ -1,6 +1,6 @@
-package ru.gusenkovegor.javaschoolapplinev2.lesson4;
+package ru.gusenkovegor.javaschoolapplinev2.lesson4.old;
 
-public enum Sweets {
+public enum OldSweets {
     WHITE_CHOCOLATE(50, 50.00, "сахар, масло какао, плёночное сухе молоко и ванилин"),
     MILK_CHOCOLATE(55, 55.00, "сахар, масло какао, молоко сухое обезжиренное, какао тертое, сыворотка сухая молочная, жир молочный"),
     CANDY(35, 45.00, " финик, арахис, шоколад несладкий (какао-масло, какао-порошок), ароматизатор пищевой ванилин"),
@@ -10,7 +10,7 @@ public enum Sweets {
     double price;
     String composition;
 
-    Sweets(double weight, double price, String composition) {
+    OldSweets(double weight, double price, String composition) {
         this.weight = weight;
         this.price = price;
         this.composition = composition;
